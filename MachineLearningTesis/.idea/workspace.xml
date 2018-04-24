@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77cfc72a-c90f-4bd3-8415-d2cffffd4d55" name="Default" comment="Primer commit">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PruebasMLocal.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../tesis/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../tesis/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../tesis/root/Note.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../tesis/root/Reader/Reader.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../tesis/root/Reader/ReaderConcret.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../tesis/root/Reader/ReaderDecorator/BateryDecorator.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../tesis/root/Reader/ReaderDecorator/ReaderDecoratorAbs.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../tesis/root/Reader/ReaderDecorator/WifiDecorator.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../tesis/root/Reader/ReaderDecorator/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../tesis/root/Reader/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../tesis/root/test.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../MLBatte" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.tmp.drivedownload/4801112.driveupload" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.tmp.drivedownload/7070341.driveupload" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.tmp.drivedownload/7798430.driveupload" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.tmp.drivedownload/9049545.driveupload" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -229,7 +223,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="width" value="1227" />
     <option name="height" value="725" />
@@ -380,7 +374,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1554" height="916" extended-state="7" />
+    <frame x="-8" y="-8" width="1554" height="916" extended-state="6" />
     <layout>
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17068273" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
