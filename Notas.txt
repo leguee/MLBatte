@@ -1,0 +1,2 @@
+MachineLearningTesis: contiene el portal para entrenamiento y carga de datos.
+tesis: contiene el proyecto de formateo de datos

@@ -1,0 +1,57 @@
+digraph "packages_Algoritms" {
+charset="utf-8"
+rankdir=BT
+"0" [label="algoritms", shape="box"];
+"1" [label="algoritms.NeuralNetwork", shape="box"];
+"2" [label="algoritms.NeuralNetwork.CgdNeuralNetwork", shape="box"];
+"3" [label="algoritms.NeuralNetwork.LstmNeuralNetwork", shape="box"];
+"4" [label="algoritms.NeuralNetwork.base", shape="box"];
+"5" [label="algoritms.NeuralNetwork.cgd", shape="box"];
+"6" [label="algoritms.NeuralNetwork.lstm", shape="box"];
+"7" [label="algoritms.NeuralNetwork.newBase", shape="box"];
+"8" [label="algoritms.base", shape="box"];
+"9" [label="algoritms.classification", shape="box"];
+"10" [label="algoritms.classification.base", shape="box"];
+"11" [label="algoritms.classification.bayes", shape="box"];
+"12" [label="algoritms.classification.knn", shape="box"];
+"13" [label="algoritms.classification.svm", shape="box"];
+"14" [label="algoritms.cluster", shape="box"];
+"15" [label="algoritms.cluster.base", shape="box"];
+"16" [label="algoritms.cluster.kmeans", shape="box"];
+"17" [label="algoritms.regression", shape="box"];
+"18" [label="algoritms.regression.base", shape="box"];
+"19" [label="algoritms.regression.linear", shape="box"];
+"20" [label="algoritms.regression.logistic", shape="box"];
+"0" -> "1" [arrowhead="open", arrowtail="none"];
+"0" -> "9" [arrowhead="open", arrowtail="none"];
+"0" -> "14" [arrowhead="open", arrowtail="none"];
+"0" -> "17" [arrowhead="open", arrowtail="none"];
+"1" -> "1" [arrowhead="open", arrowtail="none"];
+"1" -> "5" [arrowhead="open", arrowtail="none"];
+"1" -> "6" [arrowhead="open", arrowtail="none"];
+"2" -> "4" [arrowhead="open", arrowtail="none"];
+"4" -> "8" [arrowhead="open", arrowtail="none"];
+"5" -> "2" [arrowhead="open", arrowtail="none"];
+"5" -> "4" [arrowhead="open", arrowtail="none"];
+"6" -> "3" [arrowhead="open", arrowtail="none"];
+"6" -> "7" [arrowhead="open", arrowtail="none"];
+"7" -> "8" [arrowhead="open", arrowtail="none"];
+"9" -> "9" [arrowhead="open", arrowtail="none"];
+"9" -> "11" [arrowhead="open", arrowtail="none"];
+"9" -> "12" [arrowhead="open", arrowtail="none"];
+"9" -> "13" [arrowhead="open", arrowtail="none"];
+"10" -> "8" [arrowhead="open", arrowtail="none"];
+"11" -> "10" [arrowhead="open", arrowtail="none"];
+"12" -> "10" [arrowhead="open", arrowtail="none"];
+"13" -> "10" [arrowhead="open", arrowtail="none"];
+"14" -> "14" [arrowhead="open", arrowtail="none"];
+"14" -> "16" [arrowhead="open", arrowtail="none"];
+"15" -> "8" [arrowhead="open", arrowtail="none"];
+"16" -> "15" [arrowhead="open", arrowtail="none"];
+"17" -> "17" [arrowhead="open", arrowtail="none"];
+"17" -> "19" [arrowhead="open", arrowtail="none"];
+"17" -> "20" [arrowhead="open", arrowtail="none"];
+"18" -> "8" [arrowhead="open", arrowtail="none"];
+"19" -> "18" [arrowhead="open", arrowtail="none"];
+"20" -> "18" [arrowhead="open", arrowtail="none"];
+}
