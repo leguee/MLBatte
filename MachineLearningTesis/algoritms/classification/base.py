@@ -2,6 +2,8 @@ from sklearn import metrics
 from sklearn.cross_validation import train_test_split, cross_val_score
 from sklearn.metrics import mean_squared_error, r2_score
 import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
 from algoritms.base import BaseModel
 
 
@@ -43,6 +45,20 @@ class Classifier(BaseModel):
         item["metrica"] = "Correlacion de los datos"
         result["metricas"].append(item)
         print (corr)
+
+
+
+
+        ax = plt.figure(figsize=(12, 12))
+        sns.heatmap(corr, mask=np.zeros_like(corr, dtype=np.bool), cmap=sns.diverging_palette(220, 10, as_cmap=True),
+                    square=True)
+        plt.ylabel('Actual label');
+        plt.xlabel('Predicted label');
+        all_sample_title = 'Matriz de correlacion: {0}'.format(1)
+        plt.title(all_sample_title, size=15);
+        # figure.show()
+        ax.savefig('MatrizCorrelacion.png')
+
 
         scores = cross_val_score(self._model, self._features, self._target, cv=5) ##cv indica en cuanto particiona el conjunto de datos
         print ("muestra el score pero del cross validation")
@@ -117,6 +133,30 @@ class Classifier(BaseModel):
 
         prediction = self._model.predict(X_test)
 
+        acc = metrics.accuracy_score(Y_test, prediction)
+
+        item = dict()
+        print('accuracy_score' + str(acc))
+        item["descripcion"] = str(acc)
+        item["metrica"] = "sklearn.metrics.accuracy_score"
+        result["metricas"].append(item)
+
+        confMatr = metrics.confusion_matrix(Y_test, prediction);
+        item = dict()
+        print(' metrics.confusion_matrix: ' + str(confMatr))
+        item["descripcion"] = str(confMatr)
+        item["metrica"] = "sklearn. metrics.confusion_matrix"
+        result["metricas"].append(item)
+
+        figure = plt.figure(figsize=(100, 100))
+        sns.heatmap(confMatr, annot=True, fmt=".1f", linewidths=3, square=True, cmap='Blues_r');
+        plt.ylabel('Actual label');
+        plt.xlabel('Predicted label');
+        all_sample_title = 'Accuracy Score: {0}'.format(acc)
+        plt.title(all_sample_title, size=15);
+        # figure.show()
+        figure.savefig('ConfusionMatrix.png')
+
         item = dict()
         print ('predeciendo el X_test' + str(prediction))
         item["descripcion"] = str(prediction)
@@ -181,11 +221,11 @@ class Classifier(BaseModel):
         print (mene)
 
         # The coefficients
-        print('Coefficients: \n', self._model.coef_)
-        item = dict()
-        item["descripcion"] = str(self._model.coef_)
-        item["metrica"] = "coeficiente del modelo luego de la prediccion"
-        result["metricas"].append(item)
+        # print('Coefficients: \n', self._model.coef_)
+        # item = dict()
+        # item["descripcion"] = str(self._model.coef_)
+        # item["metrica"] = "coeficiente del modelo luego de la prediccion"
+        # result["metricas"].append(item)
 
         # The mean squared error
         print("Mean squared error: %.2f"
