@@ -4,6 +4,7 @@ from sklearn.metrics import mean_squared_error, r2_score
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+import datetime
 from algoritms.base import BaseModel
 
 
@@ -18,6 +19,7 @@ class Classifier(BaseModel):
 
         # train the model with given data set
     def train(self, data):
+        ts = datetime.datetime.now()
         self._features = data["features"]
         self._label = data["label"]
         # self._model.fit(self._features, self._label)
@@ -213,6 +215,14 @@ class Classifier(BaseModel):
         item["descripcion"] = str(mene)
         item["metrica"] = "median_absolute_error"
         result["metricas"].append(item)
+
+        tf = datetime.datetime.now()
+        tf = tf - ts
+        item = dict()
+        item["descripcion"] = str(tf)
+        item["metrica"] = "time"
+        result["metricas"].append(item)
+
 
         print (evs)
         print (mae)
