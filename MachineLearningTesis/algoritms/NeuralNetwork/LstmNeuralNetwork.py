@@ -1,3 +1,4 @@
+import datetime
 import warnings
 import numpy as np
 from collections import deque
@@ -369,6 +370,7 @@ class LstmNeuralNetwork():
 
         # INICIO REGION V2*******************************************************************************************************************
         # load dataset
+        ts = datetime.datetime.now()
         metricas = dict()
         metricas["metricas"] = list()
 
@@ -407,7 +409,7 @@ class LstmNeuralNetwork():
 
         # split into train and test sets
         values = reframed.values
-        n_train_hours = 3000
+        n_train_hours = int((70*values.shape[0])/100)
         train = values[:n_train_hours, :]
         test = values[n_train_hours:, :]
         # split into input and outputs
@@ -491,6 +493,14 @@ class LstmNeuralNetwork():
         item["metrica"] = "Test RMSE:"
         metricas["metricas"].append(item)
         # FIN REGION V2
+
+        tf = datetime.datetime.now()
+        tf = tf - ts
+        item = dict()
+        item["descripcion"] = str(tf)
+        item["metrica"] = "time"
+        metricas["metricas"].append(item)
+
 
         # # return self
         return metricas["metricas"]
