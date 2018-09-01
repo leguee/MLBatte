@@ -30,7 +30,7 @@ class LstmNeuralNetwork():
 
     def build_model(self, layers, metricas):
         model_train = Sequential()
-        model_train.add(LSTM( # TODO Metrica de configuracion de cada capa
+        model_train.add(LSTM( #  Metrica de configuracion de cada capa
             input_dim=layers[0],
             output_dim=layers[1],
             return_sequences=True))
@@ -39,13 +39,13 @@ class LstmNeuralNetwork():
         item["metrica"] = "add LSTM Modelo config"
         metricas["metricas"].append(item)
 
-        model_train.add(Dropout(0.2)) # TODO Metrica de config dropout
+        model_train.add(Dropout(0.2)) #  Metrica de config dropout
         item = dict()
         item["descripcion"] = "(0.2)"
         item["metrica"] = "add Dropout Modelo config"
         metricas["metricas"].append(item)
 
-        model_train.add(LSTM( # TODO Metrica de configuracion de cada capa
+        model_train.add(LSTM( #  Metrica de configuracion de cada capa
             layers[2],
             return_sequences=False))
         item = dict()
@@ -53,26 +53,26 @@ class LstmNeuralNetwork():
         item["metrica"] = "add LSTM Modelo config"
         metricas["metricas"].append(item)
 
-        model_train.add(Dropout(0.2)) # TODO Metrica dropout
+        model_train.add(Dropout(0.2)) #  Metrica dropout
         item = dict()
         item["descripcion"] = "(0.2)"
         item["metrica"] = "add Dropout Modelo config"
         metricas["metricas"].append(item)
 
-        model_train.add(Dense( # TODO Metrica de configuracion de cada capa
+        model_train.add(Dense( #  Metrica de configuracion de cada capa
             output_dim=layers[3]))
         item = dict()
         item["descripcion"] = "output_dim: " + str(layers[3])
         item["metrica"] = "add Dense Modelo config"
         metricas["metricas"].append(item)
 
-        model_train.add(Activation("linear")) # TODO Metrica de tipo de activacion
+        model_train.add(Activation("linear")) #  Metrica de tipo de activacion
         item = dict()
         item["descripcion"] = "linear"
         item["metrica"] = "add Activation Modelo config"
         metricas["metricas"].append(item)
 
-        model_train.compile(loss="mse", optimizer="rmsprop") # TODO Metrica de configuracion de compilacion
+        model_train.compile(loss="mse", optimizer="rmsprop") #  Metrica de configuracion de compilacion
         item = dict()
         item["descripcion"] = "loss=mse|optimizer=rmsprop"
         item["metrica"] = "compile Modelo config"
@@ -221,19 +221,19 @@ class LstmNeuralNetwork():
         # metricas = dict()
         # metricas["metricas"] = list()
         #
-        # epochs  = 1 #originalmente estaba en 1 TODO Metrica
+        # epochs  = 1 #originalmente estaba en 1  Metrica
         # item = dict()
         # item["descripcion"] = epochs
         # item["metrica"] = "epochs"
         # metricas["metricas"].append(item)
         #
-        # seq_len = 50 # TODO Metrica
+        # seq_len = 50 #  Metrica
         # item = dict()
         # item["descripcion"] = seq_len
         # item["metrica"] = "seq_len"
         # metricas["metricas"].append(item)
         #
-        # sequence_length = seq_len + 1 # TODO Metrica
+        # sequence_length = seq_len + 1 #  Metrica
         # item = dict()
         # item["descripcion"] = sequence_length
         # item["metrica"] = "sequence_length"
@@ -247,7 +247,7 @@ class LstmNeuralNetwork():
         #
         # result = np.array(result)
         #
-        # row = round(0.9 * result.shape[0]) # TODO Metrica
+        # row = round(0.9 * result.shape[0]) #  Metrica
         # item = dict()
         # item["descripcion"] = row
         # item["metrica"] = "'row' indica el numero de separacion entre 90%train y 10%test"
@@ -255,49 +255,49 @@ class LstmNeuralNetwork():
         #
         # train = result[:int(row), :]
         # np.random.shuffle(train)
-        # x_train = train[:, :-1] # TODO Metrica
+        # x_train = train[:, :-1] #  Metrica
         # item = dict()
         # item["descripcion"] = str(x_train)
         # item["metrica"] = "x_train"
         # metricas["metricas"].append(item)
         #
-        # y_train = train[:, -1] # TODO Metrica
+        # y_train = train[:, -1] #  Metrica
         # item = dict()
         # item["descripcion"] = str(y_train)
         # item["metrica"] = "y_train"
         # metricas["metricas"].append(item)
         #
-        # x_test = result[int(row):, :-1] # TODO Metrica
+        # x_test = result[int(row):, :-1] #  Metrica
         # item = dict()
         # item["descripcion"] = str(x_test)
         # item["metrica"] = "x_test"
         # metricas["metricas"].append(item)
         #
-        # y_test = result[int(row):, -1] # TODO Metrica
+        # y_test = result[int(row):, -1] #  Metrica
         # item = dict()
         # item["descripcion"] = str(y_test)
         # item["metrica"] = "y_test"
         # metricas["metricas"].append(item)
         # # for each sample.We can transform the prepared train and test input data into the expected structure using numpy.reshape() as follows:
-        # x_train = np.reshape(x_train, (x_train.shape[0], x_train.shape[1], 1)) # TODO Metrica
+        # x_train = np.reshape(x_train, (x_train.shape[0], x_train.shape[1], 1)) #  Metrica
         # item = dict()
         # item["descripcion"] = x_train
         # item["metrica"] = "x_train np.reshape"
         # metricas["metricas"].append(item)
         #
-        # x_test = np.reshape(x_test, (x_test.shape[0], x_test.shape[1], 1)) # TODO Metrica
+        # x_test = np.reshape(x_test, (x_test.shape[0], x_test.shape[1], 1)) #  Metrica
         # item = dict()
         # item["descripcion"] = x_test
         # item["metrica"] = "x_test np.reshape"
         # metricas["metricas"].append(item)
         #
         # #X_train, y_train, X_test, y_test = self.load_data(data,seq_len, True)
-        # model_train = self.build_model([1, 50, 100, 1] , metricas) # TODO Metrica agregar estos parametros
+        # model_train = self.build_model([1, 50, 100, 1] , metricas) #  Metrica agregar estos parametros
         # item = dict()
         # item["descripcion"] = model_train
         # item["metrica"] = "model_train"
         # metricas["metricas"].append(item)
-        # history = model_train.fit( # TODO Metrica de configuracion de fit, que parametros se le pasa
+        # history = model_train.fit( #  Metrica de configuracion de fit, que parametros se le pasa
         #     x_train,
         #     y_train,
         #     batch_size=512,
@@ -337,28 +337,28 @@ class LstmNeuralNetwork():
         #
         #
         # loss, accuracy = self._model.evaluate(x_train, y_train)
-        # print("\nLoss: %.2f, Accuracy: %.2f%%" % (loss, accuracy * 100)) # TODO Metrica loss y accuracy
+        # print("\nLoss: %.2f, Accuracy: %.2f%%" % (loss, accuracy * 100)) #  Metrica loss y accuracy
         # item = dict()
         # item["descripcion"] = "\nLoss: %.2f, Accuracy: %.2f%%" % (loss, accuracy * 100)
         # item["metrica"] = "loss_accuracy"
         # metricas["metricas"].append(item)
         #
         # # 5. make predictions
-        # probabilities = self._model.predict(x_train) # TODO Metrica
+        # probabilities = self._model.predict(x_train) #  Metrica
         # print (probabilities)
         # item = dict()
         # item["descripcion"] = str(probabilities)
         # item["metrica"] = "probabilities"
         # metricas["metricas"].append(item)
         #
-        # # predictions = [float(round(x)) for x in probabilities] # TODO Metrica
+        # # predictions = [float(round(x)) for x in probabilities] #  Metrica
         # predictions = np.round(probabilities)
         # item = dict()
         # item["descripcion"] = str(predictions)
         # item["metrica"] = "predictions"
         # metricas["metricas"].append(item)
         #
-        # accuracy = self._model.mean(predictions == y_train) # TODO Metrica
+        # accuracy = self._model.mean(predictions == y_train) #  Metrica
         # print("Prediction Accuracy: %.2f%%" % (accuracy * 100))
         # item = dict()
         # item["descripcion"] = accuracy
@@ -395,7 +395,7 @@ class LstmNeuralNetwork():
         # normalize features
         scaler = MinMaxScaler(feature_range=(0, 1))
         scaled = scaler.fit_transform(values)
-        # frame as supervised learning TODO ver si el tercer
+        # frame as supervised learning  ver si el tercer
         # parametro es de que columna debe agarra el campo Battery Ademas ver como hacer para que esta funcion una los
         #  parametros que eligio con los que que hay qye predecir, ya que desde el main le estoy enviando por separado en nparray,
         #  tiene que fomar lo mismo que el ejemplo y en la ultima columna poner el valor de la bateria. t y t-1
@@ -422,12 +422,15 @@ class LstmNeuralNetwork():
 
         # design network
         model = Sequential()
-        model.add(LSTM(50, input_shape=(train_X.shape[1], train_X.shape[2])))
+        neuronas = 50  # TODO
+        model.add(LSTM(neuronas, input_shape=(train_X.shape[1], train_X.shape[2])))
         model.add(Dense(1))
-        model.compile(loss='mae', optimizer='adam' , metrics=['accuracy'])
+        loss = 'mae' #TODO
+        optimizacion = 'adam' # TODO
+        model.compile(loss=loss, optimizer=optimizacion , metrics=['accuracy'])
 
         item = dict()
-        item["descripcion"] = "LSTM(50, input_shape:(" + str(train_X.shape[1]) + "," + str(train_X.shape[2]) +')'
+        item["descripcion"] = "LSTM(" +neuronas+ ", input_shape:(" + str(train_X.shape[1]) + "," + str(train_X.shape[2]) +')'
         item["metrica"] = "add LSTM Modelo config"
         metricas["metricas"].append(item)
 
@@ -437,16 +440,18 @@ class LstmNeuralNetwork():
         metricas["metricas"].append(item)
 
         item = dict()
-        item["descripcion"] = "loss=mae|optimizer=adam"
+        item["descripcion"] = "loss="+ loss +"|optimizer="+ optimizacion
         item["metrica"] = "compile Modelo config"
         metricas["metricas"].append(item)
 
         # fit network
-        history = model.fit(train_X, train_y, epochs=50, batch_size=72, validation_data=(test_X, test_y), verbose=2,
+        epochs = 50 #TODO
+        batch = 72 #TODO
+        history = model.fit(train_X, train_y, epochs=epochs, batch_size=batch, validation_data=(test_X, test_y), verbose=2,
                             shuffle=False)
         item = dict()
-        item["descripcion"] = "72|50|2|false" # TODO esto es ajustable
-        item["metrica"] = "batch_size|epochs|verbose|shuffle"
+        item["descripcion"] = epochs+"|"+batch
+        item["metrica"] = "epochs|batch_size"
         metricas["metricas"].append(item)
         # plot history
         plt.plot(history.history['loss'], label='train')
